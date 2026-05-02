@@ -127,7 +127,7 @@ show_local_ip() {
     echo -e "${VL}${W}             🏠 LOCAL NETWORK INFORMATION                ${C}${VL}${N}"
     echo -e "${LT}════════════════════════════════════════════════════════════${RT}${N}\n"
     
-    bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/wings/wings.sh)
+    bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/wings/wings.sh)
     
     echo -e "\n${BL}════════════════════════════════════════════════════════════${BR}${N}"
     read -p "Press Enter to continue..."
@@ -223,13 +223,13 @@ while true; do
             uninstall_wings
             ;;
         4) 
-            bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/wings/auto1.sh)
+            bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/wings/auto1.sh)
             ;;
         5)  
-            bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/wings/auto2.sh)
+            bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/wings/auto2.sh)
             ;;
         6)
-           bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/wings/database.sh)
+           bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/wings/database.sh)
             ;;
         0)
             clear
