@@ -37,14 +37,14 @@ menu() {
 blueprint1() {
   header
   echo -e "${G}▶ Running BLUEPRINT 1...${N}"
-  bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/thame/blueprint.sh)
+  bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/thame/blueprint.sh)
   pause
 }
 
 blueprint2() {
   header
   echo -e "${Y}▶ Running BLUEPRINT 2 (Fresh rebuild)...${N}"
-  bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/thame/blueprint-2.sh)
+  bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/thame/blueprint-2.sh)
   pause
 }
 
@@ -54,7 +54,7 @@ while true; do
   case $opt in
     1) blueprint1 ;;
     2) blueprint2 ;;
-    3) bash <(curl -s https://raw.githubusercontent.com/nobita329/The-Coding-Hub/refs/heads/main/srv/thame/fix.sh) ;;
+    3) bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/thame/fix.sh) ;;
     0) echo -e "${M}👋 Exit. Panel shant ho gaya.${N}"; exit ;;
     *) echo -e "${R}❌ Galat choice. Phir se try kar.${N}"; sleep 1 ;;
   esac
