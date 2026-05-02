@@ -2,7 +2,7 @@
  bash <(curl -s https://raw.githubusercontent.com/lie-kg/ptero/refs/heads/main/ptero/main/license.sh)
 # ===========================================================
 # CODING HUB Terminal Control Panel
-# Mode By - Nobita
+# Mode By - lie_kg
 # ===========================================================
 
 # --- COLORS ---
