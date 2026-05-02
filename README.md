@@ -1,5 +1,5 @@
 
-# 🚀 The Coding Hub
+# 🚀 The lie_kg Hub
 
 **All-in-One Installer Script**
 
@@ -8,9 +8,9 @@
 
 ---
 
-## 🔧 What is The Coding Hub?
+## 🔧 What is The lie_kg Hub?
 
-**The Coding Hub** is an **all-in-one installation script** designed to simplify server setup.
+**The lie_kg Hub** is an **all-in-one installation script** designed to simplify server setup.
 Panels, services, configs — sab kuch ek hi command me.
 Perfect for devs, hosters, and late-night sysadmins running on coffee ☕.
 
@@ -55,7 +55,7 @@ Script khud bolega: *“Relax, main sambhal lunga.”*
 This script makes **system-level changes**.
 Use it on a **fresh server** or **test environment** first.
 
-> Power by nobita
+> Power by lie_kg
 
 
 
