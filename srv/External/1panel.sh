@@ -7,55 +7,59 @@ C_SEC="\e[32m"
 C_LINE="\e[90m"
 NC="\e[0m"
 
-# ===================== PAUSE =====================
+# ===================== HELPERS =====================
 pause() {
   read -rp "Press Enter to continue..."
 }
 
-# ===================== 1PANEL MENU =====================
-onepanel_menu() {
+get_ip() {
+  hostname -I | awk '{print $1}'
+}
+
+# ===================== COCKPIT MENU =====================
+cockpit_menu() {
   while true; do
     clear
-    echo -e "${C_LINE}────────────── 1PANEL MENU ──────────────${NC}"
-    echo -e "${C_MAIN} 1) Install 1Panel"
-    echo -e " 2) Uninstall 1Panel"
+    echo -e "${C_LINE}────────────── COCKPIT MENU ──────────────${NC}"
+    echo -e "${C_MAIN} 1) Install Cockpit"
+    echo -e " 2) Uninstall Cockpit"
     echo -e " 3) Exit${NC}"
-    echo -e "${C_LINE}────────────────────────────────────────${NC}"
+    echo -e "${C_LINE}──────────────────────────────────────────${NC}"
     read -rp "Select → " op
 
     case "$op" in
       1)
         clear
-        echo -e "${C_MAIN}🚀 Installing 1Panel (Official Script)...${NC}"
-        curl -fsSL https://resource.fit2cloud.com/1panel/package/quick_start.sh | bash
-        echo
-        echo -e "${C_SEC}✅ 1Panel Installed Successfully${NC}"
-        echo -e "${C_SEC}🌐 Access: http://SERVER_IP:10086${NC}"
+        echo -e "${C_MAIN}🚀 Installing Cockpit Web Console...${NC}"
+        sudo apt update
+        sudo apt install -y cockpit
+        sudo systemctl enable --now cockpit.socket
+        
+        echo -e "\n${C_SEC}✅ Cockpit Installed Successfully${NC}"
+        echo -e "${C_SEC}🌐 Access: https://$(get_ip):9090${NC}"
+        echo -e "${C_SEC}💡 Use your system root/user credentials to login.${NC}"
         pause
         ;;
       2)
         clear
-        echo -e "${C_MAIN}🧹 Uninstalling 1Panel (Official)...${NC}"
-
-        if command -v 1pctl >/dev/null 2>&1; then
-          1pctl uninstall
-          echo -e "${C_SEC}✅ 1Panel Uninstalled Successfully${NC}"
-        else
-          echo -e "${RED}❌ 1Panel is not installed or 1pctl not found${NC}"
-        fi
+        echo -e "${C_MAIN}🧹 Removing Cockpit...${NC}"
+        sudo systemctl stop cockpit.socket 2>/dev/null
+        sudo apt purge -y cockpit cockpit-* 
+        sudo apt autoremove -y
+        
+        echo -e "\n${C_SEC}✅ Cockpit Completely Removed${NC}"
         pause
         ;;
       3)
-        clear
         exit 0
         ;;
       *)
         echo -e "${RED}Invalid Option${NC}"
-        pause
+        sleep 1
         ;;
     esac
   done
 }
 
 # ===================== START =====================
-onepanel_menu
+cockpit_menu
