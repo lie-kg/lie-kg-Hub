@@ -1,8 +1,5 @@
 #!/bin/bash
-
-# Run License Check First
-bash <(curl -s https://raw.githubusercontent.com/lie-kg/ptero/refs/heads/main/ptero/main/license.sh)
-
+ bash <(curl -s https://raw.githubusercontent.com/lie-kg/ptero/refs/heads/main/ptero/main/license.sh)
 # ===========================================================
 # CODING HUB Terminal Control Panel
 # Mode By - lie_kg
@@ -19,7 +16,12 @@ WHITE='\033[1;37m'
 NC='\033[0m'
 
 # ===================== AUTO COLORS =====================
-COLORS=('\033[1;31m' '\033[1;32m' '\033[1;33m' '\033[1;34m' '\033[1;35m' '\033[1;36m' '\033[38;5;208m' '\033[38;5;205m' '\033[38;5;51m')
+COLORS=(
+'\033[1;31m' '\033[1;32m' '\033[1;33m' '\033[1;34m'
+'\033[1;35m' '\033[1;36m'
+'\033[38;5;208m' '\033[38;5;205m' '\033[38;5;51m'
+)
+NC='\033[0m'
 BOLD='\033[1m'
 GRAY='\033[38;5;245m'
 
@@ -31,17 +33,19 @@ banner(){
 clear
 C1=$(rand_color); C2=$(rand_color); C3=$(rand_color)
 echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "${C2} ██╗      ██╗███████╗    ██╗  ██╗ ██████╗      ██████╗██╗      ██████╗ ██╗   ██╗██████╗ ${NC}"
-echo -e "${C2} ██║      ██║██╔════╝    ██║ ██╔╝██╔════╝     ██╔════╝██║      ██╔═══██╗██║   ██║██╔══██╗${NC}"
-echo -e "${C2} ██║      ██║█████╗      █████╔╝ ██║  ███╗    ██║     ██║      ██║   ██║██║   ██║██║  ██║${NC}"
-echo -e "${C2} ██║      ██║██╔══╝      ██╔═██╗ ██║   ██║    ██║     ██║      ██║   ██║██║   ██║██║  ██║${NC}"
-echo -e "${C2} ███████╗██║███████╗    ██║  ██╗╚██████╔╝     ╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝${NC}"
-echo -e "${C2} ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝       ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝ ${NC}"
+echo
+echo -e "${C2} ██╗     ██╗███████╗    ██╗  ██╗ ██████╗      ██████╗██╗      ██████╗ ██╗   ██╗██████╗ ${NC}"
+echo -e "${C2} ██║     ██║██╔════╝    ██║ ██╔╝██╔════╝     ██╔════╝██║     ██╔═══██╗██║   ██║██╔══██╗${NC}"
+echo -e "${C2} ██║     ██║█████╗      █████╔╝ ██║  ███╗    ██║     ██║     ██║   ██║██║   ██║██║  ██║${NC}"
+echo -e "${C2} ██║     ██║██╔══╝      ██╔═██╗ ██║   ██║    ██║     ██║     ██║   ██║██║   ██║██║  ██║${NC}"
+echo -e "${C2} ███████╗██║███████╗    ██║  ██╗╚██████╔╝    ╚██████╗███████╗╚██████╔╝╚██████╔╝██████╔╝${NC}"
+echo -e "${C2} ╚══════╝╚═╝╚══════╝    ╚═╝  ╚═╝ ╚═════╝      ╚═════╝╚══════╝ ╚═════╝  ╚═════╝ ╚═════╝ ${NC}"
+echo
 echo -e "${C3}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e "                  ${BOLD}Mode By - lie_kg${NC} ${C2}2026 ${C3}Update 4.0 Soon"
+echo -e "                 ${BOLD}Mode By - lie_kg${NC}" ${C2}2026 ${C3}Update 4.0 Soon
 echo -e "${C1}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+echo
 }
-
 # ===================== PANEL MENU =====================
 panel_menu(){
 while true; do banner
@@ -55,7 +59,8 @@ echo -e "${YELLOW} 6)${WHITE} Dashboard v4"
 echo -e "${YELLOW} 7)${WHITE} Payment Gateway"
 echo -e "${YELLOW} 8)${WHITE} CtrlPanel"
 echo -e "${YELLOW} 9)${WHITE} Reviactyl"
-echo -e "${YELLOW}10)${WHITE} Back"
+echo -e "${YELLOW}10)${WHITE} Tools Panel (External)"
+echo -e "${YELLOW}11)${WHITE} Back"
 echo -e "${C3}─────────────────────────────────────────${NC}"
 read -p "Select → " p
 
@@ -69,7 +74,8 @@ case $p in
  7) bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/Uninstall/unPaymenter.sh) ;;
  8) bash <(curl -s https://raw.githubusercontent.com/nobita54/-150/refs/heads/main/Uninstall/unCtrlPanel.sh) ;;
  9) bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/Uninstall/unReviactyl.sh) ;;
- 10) break;;
+ 10) bash <(curl -s https://raw.githubusercontent.com/yourlink/t-panel.sh) ;;
+ 11) break;;
  *) echo -e "${RED}Invalid Option${NC}"; pause;;
 esac
 done
@@ -110,14 +116,16 @@ while true; do banner
 echo -e "${PURPLE}────────────── THEME MENU ──────────────${NC}"
 echo -e "${YELLOW} 1)${WHITE} Blueprint Theme"
 echo -e "${YELLOW} 2)${WHITE} Change Theme"
-echo -e "${YELLOW} 3)${WHITE} Back"
+echo -e "${YELLOW} 3)${WHITE} Uninstall Theme"
+echo -e "${YELLOW} 4)${WHITE} Back"
 echo -e "${PURPLE}────────────────────────────────────────${NC}"
 read -p "Select → " th
 
 case $th in
- 1) bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/theme/ch.sh) ;;
- 2) bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/theme/chang.sh) ;;
- 3) break;;
+ 1) bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/thame/ch.sh) ;;
+ 2) bash <(curl -s https://raw.githubusercontent.com/lie-kg/lie-kg-Hub/refs/heads/main/srv/thame/chang.sh) ;;
+ 3) bash <(curl -s https://raw.githubusercontent.com/yourlink/theme_uninstall.sh) ;;
+ 4) break;;
  *) echo -e "${RED}Invalid${NC}"; pause;;
 esac
 done
